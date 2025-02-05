@@ -19,7 +19,7 @@ public class UpdateActiveEventsScheduler {
     @Autowired
     private EventService eventService;
 
-    @Scheduled(cron = "0 */2 * * * *")
+    @Scheduled(cron = "*/30 * * * *")
     public void checkActiveEvents() {
         List<EventEntity> events = eventRepository.findExpiredEvents(LocalDate.now());
 
